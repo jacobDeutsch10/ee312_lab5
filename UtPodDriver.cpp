@@ -50,6 +50,25 @@ int main(int argc, char *argv[])
     t.shuffle();
 
     t.showSongList();
+    cout<< endl;
+    cout<< "SHUFFLED:"<<endl;
+    t.shuffle();
+
+    t.showSongList();
+    cout<< endl;
+    cout<< "SHUFFLED:"<<endl;
+    t.shuffle();
+
+    t.showSongList();
+    cout<< endl;
+    cout<< "SHUFFLED:"<<endl;
+    t.shuffle();
+
+    t.showSongList();
+    cout<< endl;
+    cout<< "SHUFFLED:"<<endl;
+    t.shuffle();
+    t.showSongList();
 
     result = t.removeSong(s2);
     cout << "delete result = " << result << endl;
@@ -77,5 +96,9 @@ int main(int argc, char *argv[])
     t.showSongList();
     cout << "memory = " << t.getRemainingMemory() << endl;
 
+    Song s6("Beatles", "Hey Jude6", 272);
+    result = t.addSong(s6);
+    cout << "add result = " << result << endl;
+    t.showSongList();
 
 }
