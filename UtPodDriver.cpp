@@ -1,4 +1,4 @@
-* utPod_driver.cpp
+/* utPod_driver.cpp
         Demo Driver for the UtPod.
 
 Roger Priebe
@@ -43,6 +43,11 @@ int main(int argc, char *argv[])
     Song s5("Beatles", "Hey Jude5", 241);
     result = t.addSong(s5);
     cout << "add result = " << result << endl;
+
+    t.showSongList();
+    cout<< endl;
+    cout<< "SHUFFLED:"<<endl;
+    t.shuffle();
 
     t.showSongList();
 

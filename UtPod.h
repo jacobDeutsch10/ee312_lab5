@@ -1,6 +1,8 @@
 #ifndef UTPOD_H
 #define UTPOD_H
 #include "Song.h"
+#include <ctime>
+#include <cstdlib>
 
 //UtPod class declaration
 class UtPod
@@ -21,6 +23,8 @@ private:
 
     int memSize;
 
+    int countSongs();
+    SongNode* getNthSong(int n);
 public:
     //Default constructor
     //set the memory size to MAX_MEMORY
@@ -137,6 +141,7 @@ public:
     ~UtPod();
 
 };
+
 
 
 

@@ -1,8 +1,9 @@
-#ifndef
+#ifndef SONG_H
 #define SONG_H
 
 #include <string>
-
+#include <iostream>
+using namespace std;
 class Song
 {
     private:
@@ -15,21 +16,22 @@ class Song
     Song(string _title, string _eMail, int _memSize);
 
     string getTitle() const;
-    string setTitle(string title);
+    void setTitle(string title);
     string getArtist() const;
-    string setArtist(string Artist);
-    string getSize() const;
-    string setSize(int memSize);
+    void setArtist(string Artist);
+    int getSize() const;
+    void setSize(int memSize);
 
-    void swap(Song &p)
-    bool operator == (Song const &rhs)
-    bool operator > (Song const &rhs)
-    bool operator < (Song const &rhs)
+    void swap(Song &p);
+    bool operator == (Song const &rhs);
+    bool operator > (Song const &rhs);
+    bool operator < (Song const &rhs);
+    friend std::ostream& operator<<(std::ostream& os, const Song& s);
 
 
-
-
-    ~Song();
 };
+
+
+
 
 #endif

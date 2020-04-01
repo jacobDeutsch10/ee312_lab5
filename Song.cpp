@@ -1,6 +1,5 @@
-
 #include "Song.h"
-
+#include <string>
 using namespace std;
 
     Song::Song()
@@ -37,7 +36,7 @@ using namespace std;
         artist = _artist;
     }
 
-    string Song::getSize() const
+    int Song::getSize() const
     {
         return memSize;
     }
@@ -102,4 +101,10 @@ using namespace std;
             return true;
         }
 
+    }
+
+    ostream& operator<<(ostream& os, const Song& s)
+    {
+        os << s.title << ", " << s.artist << ", " << s.memSize;
+        return os;
     }
