@@ -24,7 +24,8 @@ int main(int argc, char *argv[])
       t.showSongList();
       t.sortSongList();
       t.shuffle();
-    //get remaining memory on empty UTPod
+    //get total and remaining memory on empty UTPod
+    cout<<"total mem: "<<t.getTotalMemory()<<endl;
     cout<<"remaining mem: "<<t.getRemainingMemory()<<endl;
 
     //creating a song, removing from empty UtPod and then adding
@@ -55,6 +56,7 @@ int main(int argc, char *argv[])
     result = t.addSong(s5);
     cout << "add result = " << result << endl;
     t.showSongList();
+    cout<<"remaining mem: "<<t.getRemainingMemory()<<endl;
 
     //repeatedly shuffling and sorting list
     cout<< endl;
@@ -99,6 +101,7 @@ int main(int argc, char *argv[])
 
     result = t.removeSong(s3);
     cout << "delete result = " << result << endl;
+    cout<< endl;
 
     t.showSongList();
 
@@ -110,28 +113,35 @@ int main(int argc, char *argv[])
 
     result = t.removeSong(s4);
     cout << "delete result = " << result << endl;
-
+    cout<< endl;
 
     t.showSongList();
 
     result = t.addSong(s5);
     cout << "add result = " << result << endl;
+    cout<< endl;
 
     t.showSongList();
-    cout << "memory = " << t.getRemainingMemory() << endl;
+
+    cout << "remaining memory = " << t.getRemainingMemory() << endl;
 
     //attempting to overflow memory
     Song s6("Beatles", "Hey Jude6", 272);
     result = t.addSong(s6);
     cout << "add result = " << result << endl;
     t.clearMemory();
+    cout<< endl;
+
+    cout << "Clear memory" << endl;
     t.showSongList();
 
-    cout << "memory = " << t.getRemainingMemory() << endl;
+    cout << "remaining memory = " << t.getRemainingMemory() << endl;
+    cout << endl;
 
     //creating smaller UTPod
     UtPod x = UtPod(100);
-    cout << "memory = " << t.getRemainingMemory() << endl;
+    cout << "New UtPod" << endl;
+    cout << "remaining memory = " << x.getRemainingMemory() << endl;
 
     Song sx1 = Song("Song", "Dude", 1);
     x.addSong(sx1);
@@ -140,6 +150,7 @@ int main(int argc, char *argv[])
     Song sx3 = Song("Song", "Dude", 3);
     x.addSong(sx3);
     //shuffle and show list then sort based on memSize
+    cout<<endl;
     x.showSongList();
     cout<< endl;
     cout<< "SHUFFLED:"<<endl;
@@ -153,8 +164,7 @@ int main(int argc, char *argv[])
     cout<< endl;
     cout<< "SORTED:"<<endl;
     x.showSongList();
-    cout << "memory = " << x.getRemainingMemory() << endl;
-
+    cout << "remaining memory = " << x.getRemainingMemory() << endl;
 
    // return 0;
 
