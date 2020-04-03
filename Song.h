@@ -13,7 +13,7 @@ class Song
         static const int MAX_HANDICAP = 99;
     public:
     Song();
-    Song(string _title, string _eMail, int _memSize);
+    Song(string _artist, string _title, int _memSize);
 
     string getTitle() const;
     void setTitle(string title);

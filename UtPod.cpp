@@ -120,7 +120,24 @@ using namespace std;
         }
     }
 
-    UtPod::SongNode* UtPod::getNthSong(int n)
+    void UtPod::sortSongList()
+    {
+        for(UtPod::SongNode *i = songs; i->next != nullptr; i = i->next)
+        {
+            for(UtPod::SongNode *j = i->next; j != nullptr; j = j->next)
+            {
+                if(i->s > j->s)
+                {
+                    SongNode temp = *i;
+                    i->s = j->s;
+                    j->s = temp.s;
+                }
+            }
+        }
+    }
+
+
+UtPod::SongNode* UtPod::getNthSong(int n)
     {
         int count = 0;
         if(n > countSongs())

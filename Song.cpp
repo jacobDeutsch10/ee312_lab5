@@ -9,10 +9,10 @@ using namespace std;
         memSize = 0;
 
     }
-    Song::Song(string _title, string _eMail, int _memSize)
+    Song::Song(string _artist, string _title, int _memSize)
     {
+        artist = _artist;
         title = _title;
-        artist = _eMail;
         memSize = _memSize;
     }
 
@@ -81,6 +81,7 @@ using namespace std;
         }
 
     }
+
 
     bool Song::operator < (Song const &rhs)
     {
