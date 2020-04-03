@@ -48,7 +48,7 @@ using namespace std;
 
     void Song::swap(Song &s2)
     {
-        Song temp = s2;     //make copy of s2 before changing
+        Song temp = s2;
         s2 = *this;
         *this = temp;
     }
@@ -63,9 +63,9 @@ using namespace std;
 
     bool Song::operator>(Song const &rhs)
     {
-        if(artist != rhs.artist)    //if artist fields are identical, check title fields, etc.
+        if(artist != rhs.artist)    //if artist fields are identical, check title fields
         {
-            return artist > rhs.artist;    //string compare between two artist fields
+            return artist > rhs.artist;
         }
         else if(title != rhs.title)
         {
