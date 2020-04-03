@@ -59,8 +59,12 @@ using namespace std;
         SongNode *p = songs;
         SongNode *prev = NULL;
 
+        if (songs == NULL)
+        {
+            return ret;
+        }
 
-        while( !(p->s == s) && p != NULL)
+        while(p != NULL && !(p->s == s))
         {
             prev = p;
             p = p->next;
@@ -87,13 +91,15 @@ using namespace std;
     void UtPod::clearMemory()
     {
         SongNode *p = songs;
-        SongNode *prev = NULL;
+        SongNode *next ;
 
         while( p != NULL){
-            prev = p;
-            delete prev;
-            p = p->next;
+            next = p->next;
+            delete p;
+            p = next;
         }
+        songs = NULL;
+
     }
 
     void UtPod::shuffle()
@@ -122,15 +128,18 @@ using namespace std;
 
     void UtPod::sortSongList()
     {
-        for(UtPod::SongNode *i = songs; i->next != nullptr; i = i->next)
+        if (songs!= NULL)
         {
-            for(UtPod::SongNode *j = i->next; j != nullptr; j = j->next)
+            for (UtPod::SongNode *i = songs; i->next != NULL; i = i->next)
             {
-                if(i->s > j->s)
+                for (UtPod::SongNode *j = i->next; j != NULL; j = j->next)
                 {
-                    SongNode temp = *i;
-                    i->s = j->s;
-                    j->s = temp.s;
+                    if (i->s > j->s)
+                    {
+                        SongNode temp = *i;
+                        i->s = j->s;
+                        j->s = temp.s;
+                    }
                 }
             }
         }

@@ -28,7 +28,6 @@ class Song
     bool operator < (Song const &rhs);
     friend std::ostream& operator<<(std::ostream& os, const Song& s);
 
-
 };
 
 
