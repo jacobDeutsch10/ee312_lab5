@@ -25,6 +25,7 @@ using namespace std;
 
     int UtPod::addSong(Song const &s)
     {
+        //if remaining memory is less than memSize of song, then do not add to UtPod
         int rem = getRemainingMemory();
         int size = s.getSize();
         if (rem > size)
@@ -44,6 +45,7 @@ using namespace std;
 
     int UtPod::getRemainingMemory()
     {
+        //scan linked list and add up all memSize fields
         SongNode *p = songs;
         int total = 0;
         while( p != NULL){
@@ -59,7 +61,7 @@ using namespace std;
         SongNode *p = songs;
         SongNode *prev = NULL;
 
-        if (songs == NULL)
+        if (songs == NULL)      //do not remove from empty list
         {
             return ret;
         }
@@ -108,7 +110,7 @@ using namespace std;
         int size = countSongs() - 1;
         while(p != NULL)
         {
-            int n = rand() % size;
+            int n = rand() % size;      //swap data of current song with data of SongNode *n, n = random number
             p->s.swap(getNthSong(n)->s);
             p = p->next;
         }
@@ -134,7 +136,7 @@ using namespace std;
             {
                 for (UtPod::SongNode *j = i->next; j != NULL; j = j->next)
                 {
-                    if (i->s > j->s)
+                    if (i->s > j->s)    //compare data of two nodes, swap data if in wrong order
                     {
                         SongNode temp = *i;
                         i->s = j->s;
