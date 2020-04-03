@@ -153,6 +153,8 @@ int main(int argc, char *argv[])
     cout<< endl;
     cout<< "SORTED:"<<endl;
     x.showSongList();
+    cout << "memory = " << x.getRemainingMemory() << endl;
+
 
    // return 0;
 
